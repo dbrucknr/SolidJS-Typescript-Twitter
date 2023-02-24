@@ -1,4 +1,4 @@
-import { Component } from "solid-js";
+import { Component, createSignal } from "solid-js";
 import { FiTrash } from "solid-icons/fi";
 import { FaRegularImage, FaRegularHeart } from "solid-icons/fa";
 import { AiOutlineMessage } from "solid-icons/ai";
@@ -7,7 +7,9 @@ import MainLayout from "./components/layouts/MainLayout";
 
 
 const App: Component = () => {
-  return (
+    const [content, setContent] = createSignal("");
+
+    return (
         <MainLayout>
             <div class="flex-it py-1 px-4 flex-row">
                 <div class="flex-it mr-4">
@@ -22,6 +24,8 @@ const App: Component = () => {
                 <div class="flex-it flex-grow">
                     <div class="flex-it">
                         <textarea
+                            onInput={({ currentTarget: { value } }) => setContent(value)}
+                            value={content()}
                             name="content"
                             rows="1"
                             id="glide"
@@ -96,7 +100,7 @@ const App: Component = () => {
                 </div>
             </div>
         </MainLayout>
-  );
+    );
 };
 
 export default App;

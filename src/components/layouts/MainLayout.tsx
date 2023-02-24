@@ -2,7 +2,7 @@ import { ParentComponent } from "solid-js";
 import MainSidebar from "../sidebars/Main";
 import TrendsSidebar from "../sidebars/Trends";
 
-const MainLayout: ParentComponent = (props) => {
+const MainLayout: ParentComponent = ({ children }) => {
   return (
     <div class="w-full h-full bg-gray-900 text-gray-100">
       <div class="flex h-full min-h-252">
@@ -17,7 +17,9 @@ const MainLayout: ParentComponent = (props) => {
                       Home
                     </div>
                   </div>
-                  {props.children}
+
+                  { children }
+                  
                 </div>
                 <div class="flex-it md:w-92 w-0 mt-4">
                   <TrendsSidebar />
