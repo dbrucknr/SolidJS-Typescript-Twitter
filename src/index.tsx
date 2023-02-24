@@ -1,6 +1,7 @@
 import { render } from "solid-js/web";
+import App from "./App";
 
 render(
-    () => <div>Hello World</div>,
+    () => <App />,
     document.getElementById("root")!
 )
