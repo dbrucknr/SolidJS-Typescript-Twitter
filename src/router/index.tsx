@@ -1,8 +1,9 @@
+import { lazy } from "solid-js";
 import { Routes, Route } from "@solidjs/router"
 
 import HomeScreen from "../screens/Home"
-import LoginScreen from "../screens/Login"
-import RegisterScreen from "../screens/Register"
+const LoginScreen = lazy(() => import("../screens/Login")) 
+const RegisterScreen = lazy(() => import( "../screens/Register"))
 
 const AppRoutes = () => {
     return (
